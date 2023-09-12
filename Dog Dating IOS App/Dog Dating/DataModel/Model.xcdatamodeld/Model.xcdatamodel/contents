@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="EventCore" representedClassName="EventCore" syncable="YES">
+        <attribute name="dateAndTimeCore" optional="YES" attributeType="String"/>
+        <attribute name="eventDescriptionCore" optional="YES" attributeType="String"/>
+        <attribute name="eventNameCore" optional="YES" attributeType="String"/>
+        <attribute name="locationCore" optional="YES" attributeType="String"/>
+        <relationship name="creatorCore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCore" inverseName="userEventsCore" inverseEntity="UserCore"/>
+        <relationship name="userLikesCore" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserCore" inverseName="likedEventsCore" inverseEntity="UserCore"/>
+    </entity>
+    <entity name="ImageMetaData" representedClassName="ImageMetaData" syncable="YES">
+        <attribute name="filename" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="UserCore" representedClassName="UserCore" syncable="YES">
+        <attribute name="dogAgeCore" optional="YES" attributeType="String"/>
+        <attribute name="dogBreedCore" optional="YES" attributeType="String"/>
+        <attribute name="dogNameCore" optional="YES" attributeType="String"/>
+        <attribute name="dogPersonalityTypeCore" optional="YES" attributeType="String"/>
+        <attribute name="dogPlayStyleCore" optional="YES" attributeType="String"/>
+        <attribute name="dogSizeCore" optional="YES" attributeType="String"/>
+        <attribute name="interestsCore" optional="YES" attributeType="String"/>
+        <attribute name="nameCore" optional="YES" attributeType="String"/>
+        <attribute name="personAgeCore" optional="YES" attributeType="String"/>
+        <relationship name="likedEventsCore" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EventCore" inverseName="userLikesCore" inverseEntity="EventCore"/>
+        <relationship name="userEventsCore" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EventCore" inverseName="creatorCore" inverseEntity="EventCore"/>
+    </entity>
+    <elements>
+        <element name="EventCore" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="ImageMetaData" positionX="-63" positionY="99" width="128" height="44"/>
+        <element name="UserCore" positionX="-54" positionY="27" width="128" height="194"/>
+    </elements>
+</model>
